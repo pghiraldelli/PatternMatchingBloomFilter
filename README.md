@@ -14,6 +14,7 @@ Entradas esperadas:
    - Palavra a ser pesquisada no texto
 
 **Lógica utilizada**
+
 Inicialmente o programa pré processa o texto, linha por linha, percorrendo-a de substring a substring de tamanho *K*. Para cada uma das substrings são obtidos *B* valores, referentes a cada saída de função hash. Finalmente, para cada um desses valores, a posição correspondente no vetor de bits da linha é marcada como 1 (inicialmente todas são zero).
 
 Após isso é passada uma palavra a ser buscada e realizamos as mesmas operações que o pré processamento para obter seu próprio vetor de bits.
@@ -21,6 +22,7 @@ Após isso é passada uma palavra a ser buscada e realizamos as mesmas operaçõ
 Dessa forma é possível comparar seu próprio vetor com o vetor de cada linha do texto. Caso os mesmos coincidam não há garantias de que a palavra realmente se encontra na determinada linha. Para contornar tal problema, utilizamos a função *find* do python para determinar se a palavra pertence à linha.
 
 **Referências**
+
 Texto utilizado:
   - Retirado do link: http://norvig.com/big.txt
   -	Tamanho: 6,5 MB

@@ -59,12 +59,13 @@ the word is really in the text.'''
 def wordInText(word):
 	subs = getAllSubstrings(word)
 	sigWord = getSignature(word)
+	positionsSigWord = sigWord == 1
 
 	for line in xrange(len(content)):
 		sigLine = allSignatures[line]
 		
-		#get all the positions of sigLine where sigWord is 1 and then check if they're all 1.
-		sameSignature = np.all(sigLine[sigWord == 1] == 1)
+		#get all positions of sigLine where sigWord is 1 and then check if they're all 1.
+		sameSignature = np.all(sigLine[positionsSigWord] == 1)
 
 		if sameSignature and (word in content[line]):
 			return True
